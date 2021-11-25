@@ -1,0 +1,35 @@
+{
+  "name": "lex-bot-example",
+  "version": "1.0.0",
+  "description": "Using the AWS SDK for JavaScript V3 to create an Amazon Lex chatbot within a web application.",
+  "main": "index.js",
+  "repository": "git@github.com/awsdocs/aws-doc-sdk-examples/tree/master/javascriptv3/example_code/cross-services/lex-bot-example.git",
+  "author": "Vandyck",
+  "license": "Apache 2.0",
+  "scripts": {
+    "build": "webpack --entry ./src/index.js --mode development -o main.js",
+    "build-cdk": "aws cloudformation create-stack --stack-name TestLexSDK3 --template-body file://setup.yaml --capabilities CAPABILITY_IAM",
+    "test": "exit 0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity": "^3.32.0",
+    "@aws-sdk/client-comprehend": "^3.32.0",
+    "@aws-sdk/client-iam": "^3.32.0",
+    "@aws-sdk/client-lex-runtime-service": "^3.32.0",
+    "@aws-sdk/client-lex-runtime-v2": "^3.42.0",
+    "@aws-sdk/client-translate": "^3.32.0",
+    "@aws-sdk/credential-provider-cognito-identity": "^3.32.0",
+    "aws-cli": "^0.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.23",
+    "path-browserify": "^1.0.1",
+    "typescript": "^4.0.2",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1"
+  },
+  "exports": {
+    "import": "./es6entry.mjs",
+    "require": "./es5entry.cjs"
+  }
+}
