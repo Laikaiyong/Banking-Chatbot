@@ -13,17 +13,37 @@ https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/lex-bot-exampl
 <!--snippet-start:[cross-service.JavaScript.lex-app.frontendV3]-->
 <!DOCTYPE html>
 <head>
-    <title>Amazon Lex V2 Banking Bot</title>
+    <title>APspace</title>
     <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="amazon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link data-require="bootstrap-css" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
 </head>
 
 <body>
-<h1 id="title">Amazon Lex V2 Banking Bot</h1>
-<div id="conversation"></div>
-<div id="input-field">
-    <input type="text" id="wisdom" size="80" value="" placeholder="Check my account balance">
-    <button onclick="createResponse()" id="send-btn">Send</button>
-</div>
-<script type="text/javascript" src="../dist/main.js"></script>
+    <button class="chatbox-open">
+        <i class="fa fa-comment fa-2x" aria-hidden="true"></i>
+    </button>
+    <section class="chatbox-panel">
+      <header class="chatbox-panel__header">
+        <aside style="flex:9">
+            <h1 id="title">APtalk</h1>(Online)
+        </aside>
+        <aside style="flex:3;text-align:right;">
+          <button class="chatbox-panel-close"><i class="fas fa-times" aria-hidden="true"></i></button>
+        </aside>
+      </header>
+      <div id="conversation"></div>
+      <footer class="chatbox-panel__footer">
+        <aside style="flex:11">
+          <input onkeyup="detectEnter(event)" type="text" id="wisdom" placeholder="Type your question here" autofocus></input>
+        </aside>
+        <button style="flex:1;color:#888;text-align:center;" onclick="createResponse()" class="btn btn-info" id="send-btn">
+          <i class="fa fa-paper-plane" aria-hidden="true"></i>
+        </button>
+      </footer>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="../dist/main.js"></script>
 </body>
 <!--snippet-end:[cross-service.JavaScript.lex-app.frontendV3]-->

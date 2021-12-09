@@ -124,6 +124,27 @@ const createResponse = async () => {
     }
   }
 };
+
+function detectEnter(logkey) {
+  if (logkey.code == "Enter") {
+    createResponse();
+  }
+};
+
+const chatbox = jQuery.noConflict();
+
+chatbox(() => {
+  chatbox(".chatbox-open").click(() =>
+    chatbox(".chatbox-panel").fadeIn()
+  );
+
+  chatbox(".chatbox-panel-close").click(() => {
+    chatbox(".chatbox-panel").fadeOut();
+    chatbox(".chatbox-open").fadeIn();
+  });
+});
+
 // Make the function available to the browser.
 window.createResponse = createResponse;
+window.detectEnter = detectEnter;
 // snippet-end:[cross-service.JavaScript.lex-app.backendV3]

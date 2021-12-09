@@ -7,7 +7,7 @@
   "author": "Vandyck",
   "license": "Apache 2.0",
   "scripts": {
-    "build": "webpack --entry ./src/index.js --mode development -o main.js",
+    "build": "webpack --entry ./src/index.js --mode development -o dist",
     "build-cdk": "aws cloudformation create-stack --stack-name TestLexSDK3 --template-body file://setup.yaml --capabilities CAPABILITY_IAM",
     "test": "exit 0"
   },
