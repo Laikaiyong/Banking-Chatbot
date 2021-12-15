@@ -199,3 +199,9 @@ div {
     flex: 0 0 auto;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .chatbox-panel {
+    width: 100%;
+  }
+}
