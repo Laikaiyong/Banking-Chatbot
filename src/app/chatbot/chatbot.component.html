@@ -1,0 +1,22 @@
+<button class="chatbox-open" (click)="isOpen = true">
+    <mat-icon>message</mat-icon>
+</button>
+<div class="chatbox-panel" *ngIf="isOpen">
+  <header class="chatbox-panel__header">
+    <aside style="flex:9">
+        <h1 id="title">Vandyck</h1>(Online)
+    </aside>
+    <aside style="flex:3;text-align:right;">
+      <button class="chatbox-panel-close" (click)="isOpen = false"><mat-icon>close</mat-icon></button>
+    </aside>
+  </header>
+  <div id="conversation"></div>
+  <footer class="chatbox-panel__footer">
+    <aside style="flex:11">
+      <input (keydown.enter)="detectEnter()" type="text" id="wisdom" placeholder="Type your question here" autofocus>
+    </aside>
+    <button style="flex:1;color:#888;text-align:center;" (click)="createResponse()" class="btn btn-info" id="send-btn">
+        <mat-icon>send</mat-icon>
+    </button>
+  </footer>
+</div>
