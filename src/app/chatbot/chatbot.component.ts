@@ -16,7 +16,8 @@ import { time } from 'console';
 
 export class ChatbotComponent{
   g_text : string = "";
-  isOpen : boolean = false;
+  isOpen : boolean = true;
+  isEnabled: boolean = false;
   
   showRequest(g_text: string) {
     var conversationDiv = document.getElementById("conversation");
@@ -76,6 +77,7 @@ export class ChatbotComponent{
       conversationDiv.appendChild(timeDiv);
       conversationDiv.scrollTop = conversationDiv.scrollHeight;
     }
+    this.isEnabled = false;
   }
   
   async createResponse() {
@@ -86,6 +88,7 @@ export class ChatbotComponent{
       var wisdom = wisdomText.value.trim();
       wisdomText.value = "";
       // wisdomText.locked = true;
+      this.isEnabled = true;
   
       const comprehendParams = {
         Text: wisdom,
