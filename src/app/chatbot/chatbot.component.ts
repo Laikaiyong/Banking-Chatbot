@@ -26,8 +26,11 @@ export class ChatbotComponent{
     requestPara.appendChild(document.createTextNode(g_text));
     
     const now = new Date();
-    const hour = now.getHours();
-    const minute = now.getMinutes();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var hour, minute;
+    if (hours < 10)  hour = '0'+hours.toString(); else hour = hours.toString();
+    if (minutes < 10)  minute = '0'+minutes.toString(); else minute = minutes.toString();
     var sendTime = document.createElement('p');
     sendTime.className += "userTime";
     sendTime.appendChild(document.createTextNode("Sent, " + hour + ":" + minute));
@@ -58,8 +61,11 @@ export class ChatbotComponent{
     responsePara.appendChild(document.createElement("br"));
 
     const now = new Date();
-    const hour = now.getHours();
-    const minute = now.getMinutes();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var hour, minute;
+    if (hours < 10)  hour = '0'+hours.toString(); else hour = hours.toString();
+    if (minutes < 10)  minute = '0'+minutes.toString(); else minute = minutes.toString();
     var sendTime = document.createElement('p');
     sendTime.className += "lexTime";
     sendTime.appendChild(document.createTextNode("Responded, " + hour + ":" + minute));
