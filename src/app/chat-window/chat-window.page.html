@@ -1,0 +1,23 @@
+<ion-header color="primary" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/home']">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Vandyck - Banking Bot</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid id="conversation"></ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-input (keydown.enter)="detectEnter()" type="text" id="wisdom" placeholder="Type your question here" [disabled]="isEnabled ? '' : null"></ion-input>
+    <ion-buttons (click)="createResponse()" style="padding:10px;" slot="end">
+      <ion-button style="flex:1;text-align:center;">
+        <ion-icon name="paper-plane"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

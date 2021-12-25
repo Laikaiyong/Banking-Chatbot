@@ -1,0 +1,81 @@
+$base-height: 377px;
+$base-dimension: 16px;
+$base-border-radius: 12px;
+$base-button-size: 52px;
+$primary-color: #3398DA;
+$accent-color: #f6f7f9;
+$background-color: #fff;
+$font-color: #888;
+
+p {
+  font-size: 14px;
+  margin: 10px 10px 0 10px;
+  padding: 20px;
+  border-radius: 4px;
+  max-width: 60%;
+  font-family: sans-serif;
+
+  &.lexResponse {
+    text-align: left;
+    float: left;
+    background-color: #3398DA;
+    color: white;
+  }
+
+  &.lexTime {
+    text-align: left;
+    float: left;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  &.userRequest {
+    text-align: left;
+    float: right;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+
+  &.userTime {
+    text-align: right;
+    float: right;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  &.lexError {
+    float: left;
+    background-color: #3398DA;
+    color: red;
+  }
+}
+
+div {
+  &#conversation{
+    height: 10px;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    padding: 4px;
+    overflow: scroll;
+  }
+
+  &.user-chat-div,
+  &.lex-chat-div {
+    width: 100%;
+    display: block;
+    min-height: 74px;
+  }
+
+  &.lex-chat-div {
+    @media screen and (max-width: 696px) {
+        min-height: 105px;
+    }
+  }
+
+  &.time-div{
+    width: 100%;
+    display: block;
+    min-height: 25px;
+  }
+}
